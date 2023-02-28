@@ -9,9 +9,7 @@ const provider = new GoogleAuthProvider();
 export const useAuth = () => useContext(AuthContext)
 
 
-export const AuthContextProvider = ({children}:{
-    children: React.ReactNode
-}) => {
+export const AuthContextProvider = ({children}) => {
     const [user,setUser] = useState({});
     const [loading, setLoading] = useState(true);
     const router = useRouter();
@@ -34,7 +32,7 @@ export const AuthContextProvider = ({children}:{
         });
         return ()=> unsubscribe();
     },[])
-    const signup = async (name:string,email:string, password:string) => {
+    const signup = async (name,email, password) => {
         const newUser = await createUserWithEmailAndPassword(auth, email, password);
         if(newUser.user.email){
             updateProfile(
@@ -52,7 +50,7 @@ export const AuthContextProvider = ({children}:{
         
         router.push("/");
     }
-    const login = (email:string, password:string) => {
+    const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logout = () => {

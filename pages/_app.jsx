@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import { AppProps } from "next/app";
 import { AuthContextProvider } from "@/contexts/authContext";
 import { useRouter } from "next/router";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -7,7 +7,7 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 
 const noAuthRequired = ["/login", "/signup",''];
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }) {
   const router = useRouter();
   return (
     <>

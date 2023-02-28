@@ -1,9 +1,9 @@
 import React from 'react'
 import { useAuth } from '@/contexts/authContext'
 import { useRouter } from "next/router";
-function logout() {
+function Logout() {
     const { logout } = useAuth();
-    logout();
+    Logout();
     const router = useRouter();
     router.push('/');
   return (
@@ -11,4 +11,4 @@ function logout() {
   )
 }
 
-export default logout
+export default Logout

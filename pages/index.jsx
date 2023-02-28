@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import EventCard from "../components/EventCard";
-import { getEvents } from "@/components/firebase/firebase";
+import { GetEvents } from "@/components/firebase/firebase";
 import { useAuth } from "@/contexts/authContext";
 export default function Home() {
   // const EVENTS = {
@@ -29,7 +29,7 @@ export default function Home() {
   //         "coordinator2":"Cname, Cnumber"
   //     }
   // }
-  const Events = getEvents();
+  const Events = GetEvents();
   const { user } = useAuth();
   return (
     <>
@@ -68,7 +68,7 @@ export default function Home() {
                       Home
                     </Link>
                     <Link
-                      href={"/createEvent"}
+                      href={"/CreateEvent"}
                       className="text-base font-medium text-dark mr-6 hover:text-primary"
                     >
                       Create Event

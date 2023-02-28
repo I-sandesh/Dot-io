@@ -1,9 +1,9 @@
-import { sendEvent } from "@/components/firebase/firebase";
+import { SendEvent } from "@/components/firebase/firebase";
 import React, { useState } from "react";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "@/firebaseConfig";
 
-function inputHTMLFormat(title: string, value, setValue, type = "text") {
+function inputHTMLFormat(title, value, setValue, type = "text") {
   return (
     <div className="flex flex-wrap -mx-3 mb-6">
       <div className="w-full px-3">
@@ -24,7 +24,7 @@ function inputHTMLFormat(title: string, value, setValue, type = "text") {
     </div>
   );
 }
-function createEvent() {
+function CreateEvent() {
   const [eventTitle, seteventTitle] = useState("");
   const [eventDesc, seteventDesc] = useState("");
   const [eventDate, seteventDate] = useState("");
@@ -75,12 +75,12 @@ function createEvent() {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             data.image = downloadURL;
             console.log("File available at", downloadURL);
-            sendEvent(data);
+            SendEvent(data);
           });
         }
       );
     } else {
-      sendEvent(data);
+      SendEvent(data);
     }
   }
 
@@ -168,4 +168,4 @@ function createEvent() {
   );
 }
 
-export default createEvent;
+export default CreateEvent;

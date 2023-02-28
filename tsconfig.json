@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.js", "**/*.ts", "**/*.tsx", "components/firebase/firebase.jsx", "components/ProtectedRoute.jsx", "pages/createEvent.jsx", "pages/index.jsx", "pages/login.jsx", "pages/logout.jsx", "pages/signup.jsx", "pages/_document.jsx", "pages/_app.jsx", "pages/event/[id].jsx", "contexts/authContext.jsx", "components/EventCard.jsx"],
   "exclude": ["node_modules"]
 }

@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-import { getEvents } from "@/components/firebase/firebase";
+import { GetEvents } from "@/components/firebase/firebase";
 export default function Blog() {
   const router = useRouter();
   const { id } = router.query;
-  const Events = getEvents();
+  const Events = GetEvents();
   if(Events.length == 0){
     return <>Loading</>
   }

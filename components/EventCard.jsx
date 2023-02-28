@@ -8,13 +8,6 @@ function EventCard({
     location,
     image,
     id
-}: {    
-    name: string;
-    description: string;
-    date: string;
-    location: string;
-    image: string;
-    id:string;
 }) {
   let shareText = `
 Do join this exciting event

@@ -12,7 +12,7 @@ import {
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export const getEvents = () => {
+export const GetEvents = () => {
   const [Events, setEvents] = useState([]);
   useEffect(() => {
     onSnapshot(EventRef, (snapshot) => {
@@ -47,7 +47,7 @@ export const getEvents = () => {
 //     }
     
 // }
-export const sendEvent = (Event) => {
+export const SendEvent = (Event) => {
   addDoc(EventRef, Event)
     .then((docRef) => {
       location.href = './';
@@ -58,7 +58,7 @@ export const sendEvent = (Event) => {
     });
 };
 
-export const addUser = async (data, userId: string) => {
+export const AddUser = async (data, userId) => {
   const docRef = await setDoc(doc(userRef, userId), data);
   console.log("Document written with ID: ", docRef);
 };

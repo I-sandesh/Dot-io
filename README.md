@@ -1,6 +1,16 @@
 ## Event Management Website
+
+This project is made for presenting in Hackathon of Technoriti'23 held by BCE Bhagalpur.
 This repository contains the code for a college event management website. 
 The website is designed to help college administrators and students manage various events on campus, including sports competitions, music concerts, academic conferences, and many more.
+
++ Event management system is used to manage all the activity related to event.
++ In any event, many service providers work simultaneously and it is very hard to manage these providers. 
++ To make an event successful event manager needs different service provider like Sound systems services, Lighting providers, Canteen services, stage construction and so on.
++ In Present System, Event Company has to do all management work manually. They keep all payment information on papers. There is no system to check the past expenses on any event.
++ To do this, they have to check payment register and This task is very time consuming and tiresome. It is also important for event organizer that he has all the contacts details of these service providers so that he can contact them any time to plan an event at given time. To manage all these activity, we have developed this website. 
++ To make an event successful event manager needs different service provider like Sound systems services, Lighting providers, Canteen services, stage construction and so on. Keeping this entire problem in mind, we have developed this system.
+
 ### Technologies Used 
 
 The website is built using the following technologies:
@@ -18,11 +28,9 @@ The website is built using the following technologies:
 + **User dashboard and profile management**
 + **Feedback and Reviews**
 
-### Contributing 
-*If you would like to contribute to this project, please follow these guidelines :*
+## Creator
+https://www.linkedin.com/in/nayan-kumar-679970232/
+https://www.linkedin.com/in/sandesh-kumar-0a7224234/
+https://www.linkedin.com/in/i-himanshu/
 
-+ **Fork the repository.**
-+ **Create a new branch for your changes.**
-+ **Make your changes and commit them to your branch.**
-+ **Push your branch to your forked repository.**
-+ **Submit a pull request from your branch to the original repository.**
+

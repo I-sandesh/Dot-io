@@ -30,8 +30,6 @@ function CreateEvent() {
   const router = useRouter();
   if(!user?.uid){
     router.push("/login");
-    return <h1 className="text-[#408080]">Please Login First</h1>
-
   }
   const [eventTitle, seteventTitle] = useState("");
   const [eventDesc, seteventDesc] = useState("");

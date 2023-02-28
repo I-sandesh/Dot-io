@@ -42,7 +42,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {loading ? (
+        {Events.length == 0 ? (
           <section className="bg-[#F3F4F6] min-h-screen bg-[url(https://thumbs.gfycat.com/ActiveLinedDevilfish-size_restricted.gif)] bg-no-repeat bg-cover flex justify-center items-center">
             <div className="flex justify-center items-center top-0 left-0 bottom-0 right-0 bg-[#0004] absolute transition-all">
               <div className="text-white text-3xl text-center">
@@ -86,7 +86,9 @@ export default function Home() {
                         description={Event.description}
                         date={Event.date}
                         location={Event.location}
-                        image={Event.image} />
+                        image={Event.image} 
+                        id={Event.id}
+                        key={Event.id}/>
                 ))}
 
             </section>

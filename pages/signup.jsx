@@ -19,12 +19,12 @@ function SignUp() {
   return (
     <div className="bg-gray-100 h-screen flex justify-center items-center">
       <form className="bg-white flex flex-col items-center border p-8 rounded-md" onSubmit={handleSubmit}>
-        <h1 className="font-bold text-lg">SignUp</h1>
-        <input className="px-3 py-2 shadow-lg my-2" type="text" placeholder="Name" value={name} onChange={(e)=>setname(e.target.value)} required/>
-        <input className="px-3 py-2 shadow-lg my-2" type="email" placeholder="Email" value={email} onChange={(e)=>setemail(e.target.value)} required/>
-        <input className="px-3 py-2 shadow-lg my-2" type="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)} required/>
-        <button className="bg-blue-600 text-white font-bold p-1 px-3 rounded-2xl transition-all hover:scale-90">SignUp</button>
-        <Link href={"/signup"}>Already Have A Account? Login</Link>
+        <h1 className="font-bold text-lg text-[#408080]">SignUp</h1>
+        <input className="px-3 py-2 shadow-lg my-2 focus:outline-[#408080]" type="text" placeholder="Name" value={name} onChange={(e)=>setname(e.target.value)} required/>
+        <input className="px-3 py-2 shadow-lg my-2 focus:outline-[#408080]" type="email" placeholder="Email" value={email} onChange={(e)=>setemail(e.target.value)} required/>
+        <input className="px-3 py-2 shadow-lg my-2 focus:outline-[#408080]" type="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)} required/>
+        <button className="bg-primary text-white bg-[#408080] px-10 py-2 rounded-full hover:bg-[#408080bb] m-3">SignUp</button>
+        <Link href={"/signup"}>Already Have A Account? <span className="text-[#408080]">Login</span> </Link>
       </form>
     </div>
   );

@@ -3,7 +3,7 @@ import { useAuth } from '@/contexts/authContext'
 import { useRouter } from "next/router";
 function Logout() {
     const { logout } = useAuth();
-    Logout();
+    logout();
     const router = useRouter();
     router.push('/');
   return (

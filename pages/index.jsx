@@ -55,37 +55,41 @@ export default function Home() {
         ) : (
           <>
             <nav>
-              <div className="container mx-auto px-0">
+              <div className=" w-screen px-2 pr-3 sm:px-4 sm:pr-8 bg-gray-200">
                 <div className="flex justify-between items-center py-4">
-                  <div className="flex items-center">
-                    <a className="text-2xl font-bold text-dark">Eventify</a>
+                  <div className="">
+                    <a className="text-2xl font-bold text-dark"><span className="text-[#408080]">Event</span>ify</a>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center justify-between gap-5">
                     <Link
                       href="/"
-                      className="text-base font-medium text-dark mr-6 hover:text-primary"
+                      className="text-base font-medium text-dark hover:text-[#408080]"
                     >
                       Home
                     </Link>
-                    <Link
-                      href={"/CreateEvent"}
-                      className="text-base font-medium text-dark mr-6 hover:text-primary"
+                    
+                    {console.log(user)}
+                    {user?.uid ? (
+                      <>
+                      <Link
+                      href={"/createEvent"}
+                      className="text-base font-medium text-dark hover:text-[#408080]"
                     >
                       Create Event
                     </Link>
-                    {console.log(user)}
-                    {user?.uid ? (
-                      <Link
+                    <Link
                         href="/logout"
-                        className="text-base font-medium text-dark mr-6 hover:text-primary"
+                        className="text-base font-medium text-dark mr-6 hover:text-[#408080]"
                       >
-                        Logout
+                        Logout({user.displayName})
                       </Link>
+                      </>
+                      
                     ) : (
                       <>
                         <Link
                           href="/login"
-                          className="text-base font-medium text-dark mr-6 hover:text-primary"
+                          className="text-base font-medium text-dark hover:text-primary"
                         >
                           Login
                         </Link>
@@ -101,7 +105,7 @@ export default function Home() {
                 </div>
               </div>
             </nav>
-            <section className="bg-[#F3F4F6] min-h-screen flex flex-row flex-wrap justify-evenly">
+            <section className="bg-gray-100 min-h-screen flex flex-row flex-wrap justify-evenly gap-5">
               {Events &&
                 Events.map((Event) => (
                   <EventCard
@@ -112,6 +116,7 @@ export default function Home() {
                     image={Event.image}
                     id={Event.id}
                     key={Event.id}
+                    uid={Event.uid}
                   />
                 ))}
             </section>

@@ -8,18 +8,18 @@ function inputHTMLFormat(title, value, setValue, type = "text") {
     <div className="flex flex-wrap -mx-3 mb-6">
       <div className="w-full px-3">
         <label
-          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          className="block uppercase tracking-wide text-[#408080] text-xs font-bold mb-2"
           htmlFor="input"
         >
           {title}
         </label>
         <input
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 transition-all"
           id="input"
           type={type}
           value={value}
           onChange={(e) => setValue(e.target.value)}
-        />
+        required/>
       </div>
     </div>
   );
@@ -29,7 +29,6 @@ function CreateEvent() {
   const [eventDesc, seteventDesc] = useState("");
   const [eventDate, seteventDate] = useState("");
   const [eventLocation, seteventLocation] = useState("");
-  const [Tags, setTags] = useState("");
   const [File, setFile] = useState("");
   const [eventCharge, setEventCharge] = useState(0);
   const [eventSponsor, setEventSponsor] = useState("");
@@ -92,35 +91,35 @@ function CreateEvent() {
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-[#408080] text-xs font-bold mb-2"
               htmlFor="grid-password"
             >
               Event Image
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 transition-all"
               id="file"
               type="file"
               accept="image/*"
               onChange={(e) => setFile(e.target.files[0])}
-            />
+            required/>
           </div>
         </div>
 
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-[#408080] text-xs font-bold mb-2"
               htmlFor="grid-password"
             >
               event Description
             </label>
             <textarea
-              className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+              className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none transition-all"
               id="message"
               value={eventDesc}
               onChange={(e) => seteventDesc(e.target.value)}
-            ></textarea>
+            required></textarea>
           </div>
         </div>
 
@@ -132,7 +131,7 @@ function CreateEvent() {
         )}
         {inputHTMLFormat("Event Vanue", eventLocation, seteventLocation)}
         {inputHTMLFormat(
-          "Charge(in rupees)",
+          "Charge(in $)",
           eventCharge,
           setEventCharge,
           "number"
@@ -155,7 +154,7 @@ function CreateEvent() {
         <div className="md:flex md:items-center">
           <div className="md:w-1/3">
             <button
-              className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              className="shadow bg-[#408080] hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
               type="submit"
             >
               Add Event

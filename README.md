@@ -1,7 +1,7 @@
 ## Event Management Website
 This repository contains the code for a college event management website. 
 The website is designed to help college administrators and students manage various events on campus, including sports competitions, music concerts, academic conferences, and many more.
-### Technologies Used :
+### Technologies Used 
 
 The website is built using the following technologies:
 + **Nextjs**
@@ -12,15 +12,15 @@ The website is built using the following technologies:
 + **Bootstrap**
 
 ### Features :
- **User authentication and authorization**
++ **User authentication and authorization**
 + **Event creation and management**
 + **Event registration and ticketing**
 + **Payment processing**
 + **User dashboard and profile management**
 + **Feedback and Reviews**
 
-### Contributing :
-*If you would like to contribute to this project, please follow these guidelines*:
+### Contributing 
+*If you would like to contribute to this project, please follow these guidelines *:
 
 + **Fork the repository.**
 + **Create a new branch for your changes.**

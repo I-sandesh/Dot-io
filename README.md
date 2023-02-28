@@ -5,11 +5,10 @@ The website is designed to help college administrators and students manage vario
 
 The website is built using the following technologies:
 + **Nextjs**
-+ **Typescript**
++ **Javascript**
 + **Nodejs**
 + **Firebase**
 + **Tailwind CSS**
-+ **Bootstrap**
 
 ### Features :
 + **User authentication and authorization**
@@ -20,7 +19,7 @@ The website is built using the following technologies:
 + **Feedback and Reviews**
 
 ### Contributing 
-*If you would like to contribute to this project, please follow these guidelines *:
+*If you would like to contribute to this project, please follow these guidelines :*
 
 + **Fork the repository.**
 + **Create a new branch for your changes.**

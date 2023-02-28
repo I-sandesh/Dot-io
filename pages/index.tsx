@@ -2,31 +2,33 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import EventCard from "../components/EventCard";
+import { getEvents } from "@/components/firebase/firebase";
 export default function Home() {
-    const EVENTS = {
-        "event1": {
-            "name": "Solution Challenge Event",
-            "image": "https://th.bing.com/th/id/OIP.lbNwtS5QHxECLgBVO2ZLzAHaEK?pid=ImgDet&rs=1",
-            "description": "Build a solution to a local problem using Google technologies in accordance with one or more of the United Nations 17 Sustainable Development Goals.",
-            "date": "Fri, Mar 6, 7:00 AM",
-            "location": "Raj Park, New Delhi",
-            "charge": 200,
-            "sponsors":"Bing",
-            "coordinator1":"Cname, Cnumber",
-            "coordinator2":"Cname, Cnumber"
-        },
-        "event2": {
-            "name": "Google for Startups Accelerator Canada",
-            "image": "https://th.bing.com/th/id/OIP.lbNwtS5QHxECLgBVO2ZLzAHaEK?pid=ImgDet&rs=1",
-            "description": "Applications are now closed for the fourth cohort of high potential Canadian startups. Learn more about the program.",
-            "date": "Fri, Mar 6, 7:00 AM",
-            "location": "Raj Park, New Delhi",
-            "charge": 200,
-            "sponsors":"Bing",
-            "coordinator1":"Cname, Cnumber",
-            "coordinator2":"Cname, Cnumber"
-        }
-    }
+    // const EVENTS = {
+    //     "event1": {
+    //         "name": "Solution Challenge Event",
+    //         "image": "https://th.bing.com/th/id/OIP.lbNwtS5QHxECLgBVO2ZLzAHaEK?pid=ImgDet&rs=1",
+    //         "description": "Build a solution to a local problem using Google technologies in accordance with one or more of the United Nations 17 Sustainable Development Goals.",
+    //         "date": "Fri, Mar 6, 7:00 AM",
+    //         "location": "Raj Park, New Delhi",
+    //         "charge": 200,
+    //         "sponsors":"Bing",
+    //         "coordinator1":"Cname, Cnumber",
+    //         "coordinator2":"Cname, Cnumber"
+    //     },
+    //     "event2": {
+    //         "name": "Google for Startups Accelerator Canada",
+    //         "image": "https://th.bing.com/th/id/OIP.lbNwtS5QHxECLgBVO2ZLzAHaEK?pid=ImgDet&rs=1",
+    //         "description": "Applications are now closed for the fourth cohort of high potential Canadian startups. Learn more about the program.",
+    //         "date": "Fri, Mar 6, 7:00 AM",
+    //         "location": "Raj Park, New Delhi",
+    //         "charge": 200,
+    //         "sponsors":"Bing",
+    //         "coordinator1":"Cname, Cnumber",
+    //         "coordinator2":"Cname, Cnumber"
+    //     }
+    // }
+    const Events = getEvents();
   const [loading, setloading] = useState(true);
   setTimeout(() => {
     setloading(false);
@@ -64,8 +66,8 @@ export default function Home() {
                     <Link href="/" className="text-base font-medium text-dark mr-6 hover:text-primary">
                       Home
                     </Link>
-                    <Link href={"/addPost"} className="text-base font-medium text-dark mr-6 hover:text-primary">
-                      Add Event
+                    <Link href={"/createEvent"} className="text-base font-medium text-dark mr-6 hover:text-primary">
+                      Create Event
                     </Link>
                     <Link href="/login" className="text-base font-medium text-dark mr-6 hover:text-primary">
                       Login
@@ -78,13 +80,13 @@ export default function Home() {
               </div>
             </nav>
             <section className="bg-[#F3F4F6] min-h-screen flex flex-row flex-wrap justify-evenly">
-                {Object.keys(EVENTS).map((key) => (
+                {Events && Events.map((Event) => (
                     <EventCard
-                        name={EVENTS[key].name}
-                        description={EVENTS[key].description}
-                        date={EVENTS[key].date}
-                        location={EVENTS[key].location}
-                        image={EVENTS[key].image} />
+                        name={Event.name}
+                        description={Event.description}
+                        date={Event.date}
+                        location={Event.location}
+                        image={Event.image} />
                 ))}
 
             </section>

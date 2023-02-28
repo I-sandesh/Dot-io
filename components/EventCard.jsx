@@ -38,6 +38,7 @@ http://dot-io.vercel.app/event/${id}
           href={`https://wa.me/?text=${encodeURIComponent(shareText)}`}
           className="text-green"
           target={"_blank"}
+          rel="noreferrer"
         >
           {
             <FaWhatsapp/>
@@ -48,6 +49,7 @@ http://dot-io.vercel.app/event/${id}
           href={`https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/event/${id}`}
           className="text-blue-900"
           target={"_blank"}
+          rel="noreferrer"
         >
           {
             <FaFacebook/>
@@ -60,7 +62,7 @@ http://dot-io.vercel.app/event/${id}
           )}`}
           className="text-blue-400"
           target={"_blank"}
-
+          rel="noreferrer"
         >
           {
             <FaTwitter/>

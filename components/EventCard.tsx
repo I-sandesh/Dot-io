@@ -7,12 +7,14 @@ function EventCard({
     date,
     location,
     image,
+    id
 }: {    
     name: string;
     description: string;
     date: string;
     location: string;
     image: string;
+    id:string;
 }) {
   return (
     <div className="card mx-5 container shadow-lg m-auto flex flex-col text-center max-w-[300px] p-5 rounded-md">
@@ -30,10 +32,10 @@ function EventCard({
       <span className="text-[#2d4747] mb-3">{location}</span>
 
       <Link
-        href="/register-for-event"
+        href={"/event/"+id}
         className="bg-primary text-white bg-[#408080] px-4 py-2 rounded-md hover:bg-[#408080bb]"
       >
-        Register
+        View Event
       </Link>
     </div>
   );

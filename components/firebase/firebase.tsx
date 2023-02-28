@@ -4,6 +4,7 @@ import {
   addDoc,
   doc,
   getDocs,
+  getDoc,
   onSnapshot,
   setDoc,
   SetOptions,
@@ -38,6 +39,14 @@ export const getEvents = () => {
   
   return Events;
 };
+
+// export const getSingleEvent(eventId){
+//     const Events = getEvents();
+//     if(Events){
+
+//     }
+    
+// }
 export const sendEvent = (Event) => {
   addDoc(EventRef, Event)
     .then((docRef) => {

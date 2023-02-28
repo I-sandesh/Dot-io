@@ -29,10 +29,6 @@ export default function Home() {
     //     }
     // }
     const Events = getEvents();
-  const [loading, setloading] = useState(true);
-  setTimeout(() => {
-    setloading(false);
-  }, 100);
   return (
     <>
       <Head>

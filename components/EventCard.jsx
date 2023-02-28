@@ -22,12 +22,15 @@ http://dot-io.vercel.app/event/${id}
       >
         View Event
       </Link>
-      <Link
+      {
+        uid === localStorage.getItem("uid") && <Link
         href={"/event/" + id}
         className="bg-primary text-white bg-[#df4548] px-4 py-2 rounded-md hover:bg-[#408080bb] my-2"
       >
         Delete Event
       </Link>
+      }
+      
       {/* Whatsapp Share */}
 
       <div className="flex justify-evenly text-3xl mt-2">

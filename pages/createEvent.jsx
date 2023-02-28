@@ -2,7 +2,8 @@ import { SendEvent } from "@/components/firebase/firebase";
 import React, { useState } from "react";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "@/firebaseConfig";
-
+import { useAuth } from "@/contexts/authContext";
+import { useRouter } from "next/router";
 function inputHTMLFormat(title, value, setValue, type = "text") {
   return (
     <div className="flex flex-wrap -mx-3 mb-6">
@@ -25,6 +26,13 @@ function inputHTMLFormat(title, value, setValue, type = "text") {
   );
 }
 function CreateEvent() {
+  const {user} = useAuth();
+  const router = useRouter();
+  if(!user?.uid){
+    router.push("/login");
+    return <h1 className="text-[#408080]">Please Login First</h1>
+
+  }
   const [eventTitle, seteventTitle] = useState("");
   const [eventDesc, seteventDesc] = useState("");
   const [eventDate, seteventDate] = useState("");
@@ -45,6 +53,8 @@ function CreateEvent() {
       sponsors: eventSponsor,
       coordinator1: eventcoordinator1,
       coordinator2: eventcoordinator2,
+      image: "",
+      uid:user?.uid
     };
     if (File) {
       const storageRef = ref(

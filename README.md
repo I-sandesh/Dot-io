@@ -29,8 +29,8 @@ The website is built using the following technologies:
 + **Feedback and Reviews**
 
 ## Creator
-https://www.linkedin.com/in/nayan-kumar-679970232/
-https://www.linkedin.com/in/sandesh-kumar-0a7224234/
-https://www.linkedin.com/in/i-himanshu/
++ Connect with Nayan -> https://www.linkedin.com/in/nayan-kumar-679970232/
++ Connect with Sandesh -> https://www.linkedin.com/in/sandesh-kumar-0a7224234/
++ Connect with Himanshu -> https://www.linkedin.com/in/i-himanshu/
 
 

@@ -105,7 +105,7 @@ export default function Home() {
                 </div>
               </div>
             </nav>
-            <section className="bg-gray-100 min-h-screen flex flex-row flex-wrap justify-evenly gap-5">
+            <section className="bg-gray-100 min-h-screen flex flex-row flex-wrap justify-center items-start gap-5">
               {Events &&
                 Events.map((Event) => (
                   <EventCard

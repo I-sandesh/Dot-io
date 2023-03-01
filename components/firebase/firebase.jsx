@@ -1,4 +1,4 @@
-import { EventRef, userRef } from "@/firebaseConfig";
+import { EventRef, userRef ,db} from "@/firebaseConfig";
 import { async } from "@firebase/util";
 import {
   addDoc,
@@ -7,7 +7,7 @@ import {
   getDoc,
   onSnapshot,
   setDoc,
-  SetOptions,
+  deleteDoc
 } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -21,7 +21,7 @@ export const GetEvents = () => {
         if (change.type === "added") {
           allEvent.push({ ...change.doc.data(), id: change.doc.id });
         }
-        if (change.type === "modified") {
+        if (change.type === "modified"){
           allEvent = allEvent.map((Event) => {
             if (Event.id === change.doc.id) {
               return { ...change.doc.data(), id: change.doc.id };
@@ -39,7 +39,10 @@ export const GetEvents = () => {
   
   return Events;
 };
-
+export const DeleteEvent = async (eventId)=>{
+  location.href = "./"
+  await deleteDoc(doc(db, "events", eventId));
+}
 // export const getSingleEvent(eventId){
 //     const Events = getEvents();
 //     if(Events){

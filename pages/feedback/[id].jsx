@@ -56,7 +56,7 @@ function RegisterID() {
           {
             [1,2,3,4,5].map((item,index)=>{
               return(
-                <i className={index<=star?"text-yellow-300":"text-gray-400"} onClick={()=>setstar(index)}>
+                <i className={index<=star?"text-yellow-300":"text-gray-400"} key={index} onClick={()=>setstar(index)}>
                   <FaStar/>
                 </i>
               )

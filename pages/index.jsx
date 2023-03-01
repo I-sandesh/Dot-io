@@ -60,12 +60,12 @@ export default function Home() {
             <nav>
               <div className=" w-screen px-2 pr-3 sm:px-4 sm:pr-8 bg-gray-200">
                 <div className="flex justify-between items-center py-4">
-                  <div className="">
-                    <a className="text-2xl sm:text-xl font-bold text-dark">
+                  <div className="ml-4">
+                    <a className="text-xl sm:text-4xl font-bold text-dark">
                       <span className="text-[#408080]">Event</span>ify
                     </a>
                   </div>
-                  <div className="flex items-center justify-between gap-5 text-sm">
+                  <div className="flex items-center justify-between gap-5 text-sm sm:gap-10">
                     <Link
                       href="/"
                       className="text-base text-dark hover:text-[#408080] bg-slate-300 p-1 px-4 rounded-full font-bold"

@@ -21,7 +21,7 @@ function Login() {
   }
   return (
     
-    <div className="bg-gray-100 h-screen flex justify-center items-center">
+    <div className="bg-gray-100 h-screen flex justify-center items-center bg-gradient-to-r from-[#3EADCF] to-[#ABE9CD]">
       <form className="bg-white flex flex-col items-center border p-8 rounded-md" onSubmit={handleSubmit}>
         <h1 className="font-bold text-lg text-[#408080]">Login</h1>
         <input className="px-3 py-2 my-2 focus:outline-[#408080]" type="email" placeholder="Email" value={email} onChange={(e)=>setemail(e.target.value)} required/>

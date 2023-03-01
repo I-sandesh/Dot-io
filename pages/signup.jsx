@@ -17,7 +17,7 @@ function SignUp() {
     }
   }
   return (
-    <div className="bg-gray-100 h-screen flex justify-center items-center">
+    <div className="bg-gray-100 h-screen flex justify-center items-center bg-gradient-to-r from-[#3EADCF] to-[#ABE9CD]">
       <form className="bg-white flex flex-col items-center border p-8 rounded-md" onSubmit={handleSubmit}>
         <h1 className="font-bold text-lg text-[#408080]">SignUp</h1>
         <input className="px-3 py-2 shadow-lg my-2 focus:outline-[#408080]" type="text" placeholder="Name" value={name} onChange={(e)=>setname(e.target.value)} required/>

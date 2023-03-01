@@ -3,6 +3,35 @@ import Head from "next/head";
 import Link from "next/link";
 import { FaTwitter, FaFacebook, FaWhatsapp, FaShare } from "react-icons/fa";
 import { GetEvents } from "@/components/firebase/firebase";
+
+function DateFormat(date) {
+  let d = new Date(date);
+  var strArray = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  return (d.getDate() +
+    " " +
+    strArray[d.getMonth()] +
+    " " +
+    d.getFullYear() +
+    " " +
+    d.getHours() +
+    ":" +
+    d.getMinutes());
+}
+
 export default function Blog() {
   const router = useRouter();
   const { id } = router.query;
@@ -42,8 +71,8 @@ http://dot-io.vercel.app/event/${id}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="w-full min-h-screen bg-[#F3F4F6] flex p-3 justify-center items-center">
-          <div className="card mx-5 container shadow-lg m-auto flex  text-center min-w-[250px] p-5 rounded-md flex-col flex-wrap justify-center max-w-3xl">
+        <div className="w-full min-h-screen bg-[#F3F4F6] flex py-7 justify-center items-center bg-gradient-to-r from-[#3EADCF] to-[#ABE9CD]">
+          <div className="card mx-5 container shadow-lg m-auto flex  text-center min-w-[250px] p-5 rounded-md flex-col flex-wrap justify-center max-w-3xl bg-white">
             <div className="upper flex flex-row flex-wrap justify-center">
               <div className="left max-w-sm">
                 <img src={Event.image} alt="" />
@@ -57,7 +86,7 @@ http://dot-io.vercel.app/event/${id}
             </div>
             <div className="">
               <div className="flex justify-center w-full gap-7">
-                <span className="date text-[#408080] my-3">{Event.date}</span>
+                <span className="date text-[#408080] my-3">{DateFormat(Event.date)}</span>
                 <span className="text-[#2d4747] my-3">{Event.location}</span>
               </div>
               <p className="font-bold">Coordinators</p>
@@ -71,7 +100,7 @@ http://dot-io.vercel.app/event/${id}
                   Register
                 </Link>
                 <Link
-                  href={"/register/" + id}
+                  href={"/feedback/" + id}
                   className="bg-primary text-white bg-[#4264eb] px-4 py-2 rounded-md hover:bg-[#408080bb] ml-3"
                 >
                   Feedback

@@ -55,11 +55,11 @@ http://dot-io.vercel.app/event/${id}
         {description.substring(0, 100)}...
       </p>
       <span className="date text-[#408080] mt-3">{DateFormat(date)}</span>
-      <span className="text-[#2d4747] mb-3">{location.substring(0, 30)}</span>
+      {/* <span className="text-[#2d4747] mb-3">{location.substring(0, 30)}</span> */}
 
       <Link
         href={"/event/" + id}
-        className="bg-primary text-white bg-[#408080] px-4 py-2 rounded-md hover:bg-[#408080bb]"
+        className="bg-primary text-white bg-[#408080] px-4 py-2 rounded-md hover:bg-[#408080bb] mt-2"
       >
         View Event
       </Link>

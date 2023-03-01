@@ -1,15 +1,11 @@
 import { EventRef, userRef ,db} from "@/firebaseConfig";
-import { async } from "@firebase/util";
 import {
   addDoc,
   doc,
-  getDocs,
-  getDoc,
   onSnapshot,
   setDoc,
   deleteDoc
 } from "firebase/firestore";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export const GetEvents = () => {
@@ -40,7 +36,7 @@ export const GetEvents = () => {
   return Events;
 };
 export const DeleteEvent = async (eventId)=>{
-  location.href = "./"
+  location.href = "./eventPage"
   await deleteDoc(doc(db, "events", eventId));
 }
 // export const getSingleEvent(eventId){
@@ -53,7 +49,7 @@ export const DeleteEvent = async (eventId)=>{
 export const SendEvent = (Event) => {
   addDoc(EventRef, Event)
     .then((docRef) => {
-      location.href = './';
+      location.href = './eventPage';
       console.log("Document written with ID: ", docRef.id);
     })
     .catch((error) => {

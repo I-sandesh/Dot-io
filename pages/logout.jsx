@@ -5,7 +5,7 @@ function Logout() {
     const { logout } = useAuth();
     logout();
     const router = useRouter();
-    router.push('/');
+    router.push('/eventPage');
   return (
     <div onClick={()=>logout()}>Logout</div>
   )

@@ -14,7 +14,7 @@ function Login() {
     console.log(email, password);
     try{
       const A = await login(email, password);
-      router.push("/");
+      router.push("/eventPage");
     }catch(err){
       console.log(err);
     }

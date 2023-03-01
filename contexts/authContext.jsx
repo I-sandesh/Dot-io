@@ -2,7 +2,7 @@ import { createContext,useContext, useEffect, useState} from "react"
 import { onAuthStateChanged,createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup ,updateProfile} from "firebase/auth"
 import {auth, userRef} from "firebaseConfig"
 import { useRouter } from "next/router";
-import { addUser } from "@/components/firebase/firebase";
+// import { addUser } from "@/components/firebase/firebase";
 export const AuthContext = createContext({})
 const provider = new GoogleAuthProvider();
 export const useAuth = () => useContext(AuthContext)
@@ -51,7 +51,7 @@ export const AuthContextProvider = ({children}) => {
             // },newUser.user.uid);
         }
         
-        router.push("/");
+        router.push("/eventPage");
     }
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)

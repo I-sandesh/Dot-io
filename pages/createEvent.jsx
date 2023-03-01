@@ -137,7 +137,7 @@ function CreateEvent() {
           seteventDate,
           "datetime-local"
         )}
-        {inputHTMLFormat("Event Vanue", eventLocation, seteventLocation)}
+        {inputHTMLFormat("Event Venue", eventLocation, seteventLocation)}
         {inputHTMLFormat(
           "Charge(in $)",
           eventCharge,

@@ -1,5 +1,4 @@
 import React from "react";
-
 function RegisterID() {
   return (
     <div class="leading-loose w-screen min-h-screen flex justify-center items-center bg-gradient-to-r from-[#3EADCF] to-[#ABE9CD]">
@@ -14,6 +13,7 @@ function RegisterID() {
             id="cus_name"
             name="cus_name"
             type="text"
+            value={localStorage.getItem("name")}
             required=""
             placeholder="Your Name"
             aria-label="Name"
@@ -21,15 +21,16 @@ function RegisterID() {
         </div>
         <div class="mt-2">
           <label class="block text-sm text-[#408080]" for="cus_email">
-            Number{" "}
+            Email{" "}
           </label>
           <input
             class="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded focus:outline-[#408080]"
             id="cus_email"
             name="cus_email"
+            value={localStorage.getItem("email")}
             type="text"
             required=""
-            placeholder="Your Number"
+            placeholder="Your Email"
             aria-label="Email"
           />
         </div>
@@ -39,12 +40,12 @@ function RegisterID() {
           </label>
           <input
             class="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded focus:outline-[#408080]"
-            id="cus_email"
-            name="cus_email"
+            id="cus_expect"
+            name="expect"
             type="text"
             required=""
             placeholder="i want to attend this session..."
-            aria-label="Email"
+            aria-label="Expect"
           />
         </div>
         <p class="mt-4 text-gray-800 font-medium">Payment information</p>
@@ -58,7 +59,7 @@ function RegisterID() {
             name="cus_name"
             type="text"
             required=""
-            placeholder="Card Number MM/YY CVC"
+            placeholder="Card Number"
             aria-label="Name"
           />
         </div>

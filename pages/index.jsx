@@ -31,6 +31,9 @@ export default function Home() {
   // }
   const Events = GetEvents();
   const { user } = useAuth();
+  const [eventType, setEventType] = useState("all");
+  const [eventLoc, setEventLoc] = useState("all")
+  const currentTime = new Date();
   return (
     <>
       <Head>
@@ -58,33 +61,34 @@ export default function Home() {
               <div className=" w-screen px-2 pr-3 sm:px-4 sm:pr-8 bg-gray-200">
                 <div className="flex justify-between items-center py-4">
                   <div className="">
-                    <a className="text-2xl font-bold text-dark"><span className="text-[#408080]">Event</span>ify</a>
+                    <a className="text-2xl sm:text-xl font-bold text-dark">
+                      <span className="text-[#408080]">Event</span>ify
+                    </a>
                   </div>
-                  <div className="flex items-center justify-between gap-5">
+                  <div className="flex items-center justify-between gap-5 text-sm">
                     <Link
                       href="/"
-                      className="text-base font-medium text-dark hover:text-[#408080]"
+                      className="text-base text-dark hover:text-[#408080] bg-slate-300 p-1 px-4 rounded-full font-bold"
                     >
                       Home
                     </Link>
-                    
+
                     {console.log(user)}
                     {user?.uid ? (
                       <>
-                      <Link
-                      href={"/createEvent"}
-                      className="text-base font-medium text-dark hover:text-[#408080]"
-                    >
-                      Create Event
-                    </Link>
-                    <Link
-                        href="/logout"
-                        className="text-base font-medium text-dark mr-6 hover:text-[#408080]"
-                      >
-                        Logout({user.displayName})
-                      </Link>
+                        <Link
+                          href={"/createEvent"}
+                          className="text-base font-medium text-dark hover:text-[#408080]"
+                        >
+                          Create Event
+                        </Link>
+                        <Link
+                          href="/logout"
+                          className="text-base font-medium text-dark mr-6 hover:text-[#408080]"
+                        >
+                          Logout({user.displayName})
+                        </Link>
                       </>
-                      
                     ) : (
                       <>
                         <Link
@@ -105,23 +109,64 @@ export default function Home() {
                 </div>
               </div>
             </nav>
+            <div className="flex flex-nowrap justify-end gap-10 bg-gray-200 p-2 pr-4">
+              <select
+                onChange={(e) => setEventType(e.target.value)}
+                className='w-28'
+              >
+                <option value="all">All Events</option>
+                <option value="upcoming">Upcoming Events</option>
+                <option value="past">Past Events</option>
+              </select>
+
+              <select
+                name=""
+                id=""
+                onChange={(e) => setEventLoc(e.target.value)}
+                className='w-28'
+              >
+                <option value="all" disabled selected>Select Location</option>
+                <option value="all">All Locations</option>
+                <option value="online">Online</option>
+                <option value="off">Offline</option>
+              </select>
+
+              {/* <input type="search" placeholder="Search..." className="outline-[#408080] shadow-[#408080] shadow-inner rounded-full border-[#408080] w-28 sm:w-fit px-4 py-1"  /> */}
+            </div>
             <section className="bg-gray-100 min-h-screen flex flex-row flex-wrap justify-center items-start gap-5">
               {Events &&
-                Events.map((Event) => (
-                  <EventCard
-                    name={Event.name}
-                    description={Event.description}
-                    date={Event.date}
-                    location={Event.location}
-                    image={Event.image}
-                    id={Event.id}
-                    key={Event.id}
-                    uid={Event.uid}
-                  />
-                ))}
+                Events.map((Event) => {
+                  if (
+                    
+                    (eventType == "all" ||
+                    (eventType=='upcoming' && (currentTime.getTime()-new Date(Event.date).getTime()<=0)) ||
+                    (eventType == "past" && (currentTime.getTime()-new Date(Event.date).getTime()>=0)))                    
+                    &&
+                    (eventLoc=="all"||
+                    (eventLoc=="online" && eventLoc==Event.location.toLowerCase())||
+                    (eventLoc=="off" && "online"!==Event.location.toLowerCase())
+                    )
+                    ){
+                    return (
+                      <EventCard
+                        name={Event.name}
+                        description={Event.description}
+                        date={Event.date}
+                        location={Event.location}
+                        image={Event.image}
+                        id={Event.id}
+                        key={Event.id}
+                        uid={Event.uid}
+                      />
+                    );
+                    }
+                })}
             </section>
           </>
         )}
+        <footer className="font-extrabold text-center font-serif">
+                Made With ❤️  By Team .IO
+        </footer>
       </main>
     </>
   );

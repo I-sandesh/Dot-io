@@ -22,9 +22,13 @@ export const AuthContextProvider = ({children}) => {
                     photoURL: userr.photoURL,
                     isVerified: userr.emailVerified
                 })
+                localStorage.setItem("name",userr.displayName)
+                localStorage.setItem("uid",userr.uid)
+                localStorage.setItem("email",userr.email)
                 console.log(user)
             } else {
                 setUser({})
+
             }
             console.log(user)
             setLoading(false)

@@ -8,12 +8,11 @@
 .logo {
     cursor: pointer;
     width: 45vh;
-    mix-blend-mode: overlay;
+    /* mix-blend-mode: overlay; */
     
     color: #9c27b0;
-
     position: relative;
-    filter: saturate(200%);
+    filter: saturate(100%);
     left: -15vh;
     top: -40px;
     

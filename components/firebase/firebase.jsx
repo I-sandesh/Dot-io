@@ -36,8 +36,8 @@ export const GetEvents = () => {
   return Events;
 };
 export const DeleteEvent = async (eventId)=>{
-  location.href = "./eventPage"
   await deleteDoc(doc(db, "events", eventId));
+  location.href = "./eventPage"
 }
 // export const getSingleEvent(eventId){
 //     const Events = getEvents();

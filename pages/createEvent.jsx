@@ -92,8 +92,8 @@ function CreateEvent() {
   }
 
   return (
-    <div className="min-h-screen flex justify-center items-center p-6">
-      <form onSubmit={submitHandler} className="w-full max-w-lg">
+    <div className="min-h-screen flex justify-center items-center p-6 bg-gradient-to-r from-[#3EADCF] to-[#ABE9CD]">
+      <form onSubmit={submitHandler} className="w-full max-w-lg bg-white p-10 rounded-lg">
         {inputHTMLFormat("Event Name", eventTitle, seteventTitle, "text")}
 
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -120,7 +120,7 @@ function CreateEvent() {
               className="block uppercase tracking-wide text-[#408080] text-xs font-bold mb-2"
               htmlFor="grid-password"
             >
-              event Description
+              event Description & Agenda
             </label>
             <textarea
               className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none transition-all"

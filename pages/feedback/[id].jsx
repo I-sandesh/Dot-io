@@ -60,7 +60,7 @@ function RegisterID() {
                   <FaStar/>
                 </i>
               )
-            }
+          }
             )
 
           }

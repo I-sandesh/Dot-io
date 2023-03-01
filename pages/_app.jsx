@@ -1,3 +1,4 @@
+import "@/styles/landing.css"
 import "@/styles/globals.css";
 import { AppProps } from "next/app";
 import { AuthContextProvider } from "@/contexts/authContext";

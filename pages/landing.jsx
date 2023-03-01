@@ -1,13 +1,32 @@
 import React from "react";
+import Link from "next/link";
 function landing() {
   return (
-    <section className="bg-[#F3F4F6] min-h-screen bg-[url(https://thumbs.gfycat.com/ActiveLinedDevilfish-size_restricted.gif)] bg-no-repeat bg-cover flex justify-center items-center">
-      <div className="flex justify-center items-center top-0 left-0 bottom-0 right-0 bg-[#0004] absolute transition-all">
-        <div className="text-white text-3xl text-center">
-          <h1 className="font-extrabold text-8xl tracking-wider">Eventify</h1>
+    <div class="back" style={{
+        width: "100%",
+        height: "100vh",
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)), url(back3.jpg)",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+    }}>
+        <div class="navbar ml-2">
+            <img src="eventify logo (1).png" width="100" alt="" class="logo" />
+            <ul>
+                <li><Link href="/signup">Sign Up</Link></li>
+                <li><Link href="/login">Login</Link></li>
+            </ul>
         </div>
-      </div>
-    </section>
+        <div class="content">
+            <h1>Eventify</h1>
+            <h3>From Concept to Reality: Your Dream Event Starts Here</h3>
+            <div>
+            <Link href="/">
+                <button type="button" onclick="window.location.href = 'https://dot-io.vercel.app';" ><span></span> GET STARTED</button>               
+            </Link>
+            </div>
+        </div>
+    </div>
   );
 }
 

@@ -85,7 +85,7 @@ http://dot-io.vercel.app/event/${id}
           {<FaWhatsapp />}
         </a>
         <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/event/${id}`}
+          href={`https://www.facebook.com/sharer/sharer.php?u=http://dot-io.vercel.app/event/${id}`}
           className="text-blue-900"
           target={"_blank"}
           rel="noreferrer"

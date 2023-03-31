@@ -37,7 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Event Management Website
 
-This project is made for presenting in Hackathon of Technoriti'23 held by BCE Bhagalpur.
 This repository contains the code for a college event management website. 
 The website is designed to help college administrators and students manage various events on campus, including sports competitions, music concerts, academic conferences, and many more.
 
@@ -66,7 +65,6 @@ The website is built using the following technologies:
 + **Feedback and Reviews**
 
 ## Creator
-+ Connect with Nayan -> https://www.linkedin.com/in/nayan-kumar-679970232/
 + Connect with Sandesh -> https://www.linkedin.com/in/sandesh-kumar-0a7224234/
 + Connect with Himanshu -> https://www.linkedin.com/in/i-himanshu/
 

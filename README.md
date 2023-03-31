@@ -43,7 +43,7 @@ The website is built using the following technologies:
 + **Feedback and Reviews**
 
 ## Creator
-+ Connect with Sandesh -> https://www.linkedin.com/in/sandesh-kumar-0a7224234/
 + Connect with Himanshu -> https://www.linkedin.com/in/i-himanshu/
-
++ Connect with Sandesh -> https://www.linkedin.com/in/sandesh-kumar-0a7224234/
++ Connect with Meghna -> https://www.linkedin.com/in/meghna-kumari-4114bb234
 
